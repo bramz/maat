@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "start": "ts-node src/main.ts"
+  },
+  "dependencies": {
+    "@discordjs/builders": "^0.13.0",
+    "@discordjs/rest": "^0.4.1",
+    "@types/node": "*",
+    "discord-api-types": "^0.32.1",
+    "discord.js": "^13.6.0",
+    "discordx": "^9.5.3",
+    "eslint": "^8.14.0",
+    "reflect-metadata": "^0.1.13",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  }
+}
