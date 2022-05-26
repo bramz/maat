@@ -1,12 +1,28 @@
-import express, { Express, Request, Response } from 'express';
+import express, { Request, Response } from 'express'
+import { MysqlDataSource } from './source'
 
+const app = express()
+app.use(express.json())
 
-const app: Express = express();
-const port = '8080'
+MysqlDataSource.initialize()
+  .then(() => {
+    console.log("Data source initialized.")
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Maat Express')
+    // routes
+    app.get('/', (req: Request, res: Response) => {
+      res.json('Maat Express')
+    })
+    
+    app.get('/login', (req: Request, res: Response) => {
+      res.send('Login')
+    })
+    
+    app.get('/register', (req: Request, res: Response) => {
+    })    
 
-app.listen(port, () => {
-  console.log(`⚡️[server]: Server is running at https://localhost:8080`);
-});
+    app.listen('3001', () => {
+      console.log(`⚡️[server]: Server is running at https://localhost:3001`)
+    })
+
+  })
+  .catch((error) => console.log(error))
