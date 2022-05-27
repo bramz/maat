@@ -19,13 +19,17 @@ export class AppComponent {
 
   constructor(private tokenStorageService: TStoreService) { }
   ngOnInit(): void {
+    /*
     this.isLoggedIn = !!this.tokenStorageService.getToken();
     if (this.isLoggedIn) {
       const user = this.tokenStorageService.getUser();
     }
+    
   }
   logout(): void {
     this.tokenStorageService.signOut();
     window.location.reload();
+  }
+  */
   }
 }

@@ -1,5 +1,5 @@
 # Maat
-A customizable management tool for all aspects of organization to a person's lifestyle.
+A customizable management tool for all aspects of organization to a persons lifestyle.
 
 ## Prerequisites
 Ensure you have installed all of the following on your development machine:

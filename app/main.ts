@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express'
 import { MysqlDataSource } from './source'
+import { user } from './models/typeorm/user'
 
 const app = express()
 app.use(express.json())
@@ -17,8 +18,12 @@ MysqlDataSource.initialize()
       res.send('Login')
     })
     
-    app.get('/register', (req: Request, res: Response) => {
-    })    
+    app.post('/register', async function (req: Request, res: Response) {
+      console.log(req.body)
+      const member = await MysqlDataSource.getRepository(user).create(req.body)
+      const results = await MysqlDataSource.getRepository(user).save(member)
+      return res.send(results)
+    })
 
     app.listen('3001', () => {
       console.log(`⚡️[server]: Server is running at https://localhost:3001`)
