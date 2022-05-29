@@ -1,0 +1,42 @@
+version: '3.9'
+services:
+  manager:
+    container_name: maat_manager
+    restart: always
+    build:
+        context: ./manager 
+    ports:
+      - 4200:80
+  bot:
+    container_name: maat_bot
+    restart: unless-stopped
+    build:
+        context: ./bot
+  app:
+    container_name: maat_app
+    restart: always
+    build:
+        context: ./app
+    ports:
+      - 3001:3001
+    volumes:
+      - ./:/app
+    depends_on:
+      - maat-app-db
+  maat-app-db:
+    image: mysql:8.0.29
+    environment:
+      MYSQL_DATABASE: ''
+      MYSQL_PASSWORD: ''
+      MYSQL_USER: ''
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - db-data:/var/lib/mysql
+
+volumes:
+    db-data:  {}
+  
+
