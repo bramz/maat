@@ -1,29 +1,37 @@
-import express, { Request, Response } from 'express'
+import express, {Request, Response} from 'express'
 import { MysqlDataSource } from './source'
-import { user } from './models/typeorm/user'
+import cors from 'cors'
+import helmet from 'helmet'
+import routes from './routes/index'
 
 const app = express()
+
+let logger = (req: Request, res: Response, next: any) => {
+  let date = new Date();
+  let date_format =
+    date.getHours() + ":" + 
+    date.getUTCMinutes() + ":" +
+    date.getUTCSeconds() + ":" +
+    date.getMonth() + "/" + 
+    date.getDate() + "/" + 
+    date.getFullYear() + ":"
+  
+  console.log(date_format, req.method, req.url)
+  next()
+}
+
+app.use(logger)
+app.use(cors())
+app.use(helmet())
 app.use(express.json())
+app.use(express.urlencoded({extended: true}))
 
 MysqlDataSource.initialize()
   .then(() => {
-    console.log("Data source initialized.")
-
+    console.log('Data source initialized')
+    
     // routes
-    app.get('/', (req: Request, res: Response) => {
-      res.json('Maat Express')
-    })
-    
-    app.get('/login', (req: Request, res: Response) => {
-      res.send('Login')
-    })
-    
-    app.post('/register', async function (req: Request, res: Response) {
-      console.log(req.body)
-      const member = await MysqlDataSource.getRepository(user).create(req.body)
-      const results = await MysqlDataSource.getRepository(user).save(member)
-      return res.send(results)
-    })
+    app.use('/', routes)
 
     app.listen('3001', () => {
       console.log(`⚡️[server]: Server is running at https://localhost:3001`)
