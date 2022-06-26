@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faSignature, faPen, faLaptopCode } from '@fortawesome/free-solid-svg-icons';
-import { TStoreService } from './t-store.service';
+import { Component } from '@angular/core'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faSignature, faPen, faLaptopCode } from '@fortawesome/free-solid-svg-icons'
+import { TStoreService } from './t-store.service'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-root',
@@ -9,27 +10,30 @@ import { TStoreService } from './t-store.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  faSignature = faSignature;
-  faPen = faPen;
-  faLaptopCode = faLaptopCode;
-  faGithub = faGithub;
+  faSignature = faSignature
+  faPen = faPen
+  faLaptopCode = faLaptopCode
+  faGithub = faGithub
   
-  private roles: string[] = [];
-  isLoggedIn = false;
+  private roles: string[] = []
+  isLoggedIn = false
 
-  constructor(private tokenStorageService: TStoreService) { }
+  constructor(
+    private tokenStorageService: TStoreService,
+    private router: Router
+    ) { }
+
   ngOnInit(): void {
-    /*
-    this.isLoggedIn = !!this.tokenStorageService.getToken();
+  
+    this.isLoggedIn = !!this.tokenStorageService.getToken()
     if (this.isLoggedIn) {
-      const user = this.tokenStorageService.getUser();
+      const user = this.tokenStorageService.getUser()
     }
     
   }
+
   logout(): void {
-    this.tokenStorageService.signOut();
-    window.location.reload();
-  }
-  */
+    this.tokenStorageService.signOut()
+    window.location.reload()
   }
 }

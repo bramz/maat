@@ -24,8 +24,13 @@ export class AuthControl {
             }
         
             const token = jwt.sign({userId: u.id, email: u.email}, config.key, {expiresIn: "1h"})
-            console.log("success")
-            res.send(token)
+            console.log("success", token)
+            res.status(200).send({
+                userId: u.id,
+                email: u.email,
+                perms: u.perms,
+                accessToken: token
+            })
         } catch (error) {
             res.status(401).send()
         }
