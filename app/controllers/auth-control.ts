@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
 import * as jwt from 'jsonwebtoken'
-import { MysqlDataSource } from '../source'
+import { PostgresDataSource } from '../utils/postgres-data-source'
 import { user } from '../models/typeorm/user'
 import config from '../config'
 
@@ -12,7 +12,7 @@ export class AuthControl {
             res.status(401).send()
         }
 
-        const userRepository = MysqlDataSource.getRepository(user)
+        const userRepository = PostgresDataSource.getRepository(user)
         let u: user
 
         try {
