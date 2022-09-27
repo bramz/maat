@@ -1,6 +1,7 @@
 import {Request, Response } from 'express'
-import { MysqlDataSource } from '../source'
+import { PostgresDataSource } from '../utils/postgres-data-source'
 import { user } from "../models/typeorm/user"
+
 
 export class UserControl {
     static register = async (req: Request, res: Response) => {
@@ -14,8 +15,8 @@ export class UserControl {
             res.status(401).send()
         }
 
-        const u = MysqlDataSource.getRepository(user).create(req.body)
-        const results = MysqlDataSource.getRepository(user).save(u)
+        const u = PostgresDataSource.getRepository(user).create(req.body)
+        const results = PostgresDataSource.getRepository(user).save(u)
         return res.send(results)
     }
 }

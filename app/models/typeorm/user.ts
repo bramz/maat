@@ -1,11 +1,10 @@
-import {Entity, Column, PrimaryColumn, Generated, Unique} from "typeorm"
+import {Entity, Column, PrimaryGeneratedColumn, Generated, Unique} from "typeorm"
 import * as bcrypt from 'bcryptjs'
 
 @Entity()
 @Unique(['email'])
 export class user {
-    @PrimaryColumn()
-    @Generated('uuid')
+    @PrimaryGeneratedColumn('uuid')
     id!: string
 
     @Column('text')

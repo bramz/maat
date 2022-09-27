@@ -1,5 +1,5 @@
 import express, {Request, Response} from 'express'
-import { MysqlDataSource } from './source'
+import { PostgresDataSource } from './utils/postgres-data-source'
 import cors from 'cors'
 import helmet from 'helmet'
 import routes from './routes/index'
@@ -26,7 +26,7 @@ app.use(helmet())
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
-MysqlDataSource.initialize()
+PostgresDataSource.initialize()
   .then(() => {
     console.log('Data source initialized')
     
@@ -38,4 +38,4 @@ MysqlDataSource.initialize()
     })
 
   })
-  .catch((error) => console.log(error))
+  .catch((error: any) => console.log(error))

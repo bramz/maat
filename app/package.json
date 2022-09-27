@@ -7,6 +7,7 @@
     "ts-dev": "nodemon main.ts"
   },
   "dependencies": {
+    "@prisma/client": "^3.15.2",
     "@types/bcryptjs": "^2.4.2",
     "@types/body-parser": "^1.19.2",
     "@types/cookie-session": "^2.0.44",
@@ -28,6 +29,8 @@
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
     "nodemon": "^2.0.16",
+    "pg": "^8.7.3",
+    "prisma": "^3.15.2",
     "reflect-metadata": "^0.1.13",
     "sequelize": "^6.20.0",
     "ts-node": "^10.7.0",
