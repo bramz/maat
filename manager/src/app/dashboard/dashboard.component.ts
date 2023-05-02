@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core'
-import { Router } from '@angular/router'
-import { TStoreService } from '../t-store.service'
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,24 +6,10 @@ import { TStoreService } from '../t-store.service'
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-//  private roles: string[] = []
-  // isLoggedIn = false
 
-  constructor(
-    private router: Router,
-    // private tokenStorageService: TStoreService
-  ) { }
-
-  // loadLogin(): void {
-  //   this.router.navigate(['/login'])
-  // }
+  constructor() { }
 
   ngOnInit(): void {
-    // this.isLoggedIn = !!this.tokenStorageService.getToken()
-    // if (this.isLoggedIn) {
-    //   const user = this.tokenStorageService.getUser()
-    // } else {
-    //   this.loadLogin()
-    // }
   }
+
 }

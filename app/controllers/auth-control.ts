@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
 import * as jwt from 'jsonwebtoken'
 import { PostgresDataSource } from '../utils/postgres-data-source'
-import { user } from '../models/typeorm/user'
+import { User } from '../models/typeorm/user'
 import config from '../config'
 
 export class AuthControl {
@@ -12,8 +12,8 @@ export class AuthControl {
             res.status(401).send()
         }
 
-        const userRepository = PostgresDataSource.getRepository(user)
-        let u: user
+        const userRepository = PostgresDataSource.getRepository(User)
+        let u: User
 
         try {
             u = await userRepository.findOneOrFail({where: { email }})

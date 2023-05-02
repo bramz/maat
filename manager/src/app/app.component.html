@@ -7,12 +7,33 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0" *ngIf="!isLoggedIn">
               <li class="nav-item"><a class="nav-link" routerLink="register">Sign Up</a></li>
               <li class="nav-item"><a class="nav-link" routerLink="login">Login</a></li>
-              <li class="nav-item"><a class="nav-link" href="https://github.com/bramz"><fa-icon [icon]="faGithub"></fa-icon></a></li>
+              <!-- <li class="nav-item"><a class="nav-link" href="https://github.com/bramz"><fa-icon [icon]="faGithub"></fa-icon></a></li> -->
             </ul>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0" *ngIf="isLoggedIn">
-              <li class="nav-item"><a class="nav-link" routerLink="dashboard">Dashboard</a></li>
+              <li class="nav-item">
+                <a class="nav-link"><fa-icon [icon]="faGear"></fa-icon></a>
+                <!-- <button class="nav-link" mat-button [matMenuTriggerFor]="settings"><fa-icon [icon]="faGear"></fa-icon></button>
+                <mat-menu class="nav-link" #settings="matMenu">
+                  <button mat-menu-item>Profile</button>
+                </mat-menu> -->
+              </li>
               <li class="nav-item"><a class="nav-link" (click)="logout()">Logout</a></li>
             </ul>
+            <!-- <mat-menu #appMenu="matMenu" *ngIf="isLoggedIn">
+              <ng-template matMenuContent let-name="name">
+                <button mat-menu-item>Settings</button>
+                <button mat-menu-item>Log off {{name}}</button>
+              </ng-template>
+            </mat-menu>
+            
+            <button mat-icon-button [matMenuTriggerFor]="appMenu" [matMenuTriggerData]="{name: 'Sally'}">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            
+
+            <button mat-icon-button [matMenuTriggerFor]="appMenu" [matMenuTriggerData]="{name: 'Bob'}">
+              <mat-icon>more_vert</mat-icon>
+            </button> -->
         </div>
     </div>
   </nav>

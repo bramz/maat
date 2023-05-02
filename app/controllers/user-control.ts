@@ -1,6 +1,6 @@
 import {Request, Response } from 'express'
 import { PostgresDataSource } from '../utils/postgres-data-source'
-import { user } from "../models/typeorm/user"
+import { User } from "../models/typeorm/user"
 
 
 export class UserControl {
@@ -15,8 +15,8 @@ export class UserControl {
             res.status(401).send()
         }
 
-        const u = PostgresDataSource.getRepository(user).create(req.body)
-        const results = PostgresDataSource.getRepository(user).save(u)
+        const u = PostgresDataSource.getRepository(User).create(req.body)
+        const results = PostgresDataSource.getRepository(User).save(u)
         return res.send(results)
     }
 }

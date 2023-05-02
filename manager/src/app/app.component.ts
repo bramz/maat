@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faSignature, faPen, faLaptopCode } from '@fortawesome/free-solid-svg-icons'
+import { faSignature, faPen, faLaptopCode, faGear } from '@fortawesome/free-solid-svg-icons'
 import { TStoreService } from './t-store.service'
 import { Router } from '@angular/router'
 
@@ -14,6 +14,7 @@ export class AppComponent {
   faPen = faPen
   faLaptopCode = faLaptopCode
   faGithub = faGithub
+  faGear = faGear
   
   private roles: string[] = []
   isLoggedIn = false

@@ -1,9 +1,9 @@
-import {Entity, Column, PrimaryGeneratedColumn, Generated, Unique} from "typeorm"
+import {Entity, Column, PrimaryGeneratedColumn, Unique, BaseEntity} from "typeorm"
 import * as bcrypt from 'bcryptjs'
 
-@Entity()
+@Entity('data_user')
 @Unique(['email'])
-export class user {
+export class User extends BaseEntity {
     @PrimaryGeneratedColumn('uuid')
     id!: string
 
