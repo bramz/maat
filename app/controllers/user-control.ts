@@ -5,7 +5,7 @@ import { User } from "../models/typeorm/user"
 
 export class UserControl {
     static register = async (req: Request, res: Response) => {
-        let { email, password1, password2 } = req.body
+        let { email, password1, password2, perms } = req.body
 
         if(!email && password1 && password2) {
             res.status(401).send()
@@ -15,8 +15,12 @@ export class UserControl {
             res.status(401).send()
         }
 
-        const u = PostgresDataSource.getRepository(User).create(req.body)
-        const results = PostgresDataSource.getRepository(User).save(u)
+        const user = new User()
+        user.email = email
+        user.password = user.encryptPassword(password1)
+        user.perms = perms
+
+        const results = await PostgresDataSource.getRepository(User).save(user)
         return res.send(results)
     }
 }

@@ -20,12 +20,12 @@ export class User extends BaseEntity {
     @OneToMany(() => Dashboard, dashboard => dashboard.user)
     dashboards!: Dashboard[];
 
-    encryptPassword() {
-        this.password = bcrypt.hashSync(this.password, 14)
+    encryptPassword(plaintext: string) {
+        plaintext = bcrypt.hashSync(plaintext, 14)
+        return plaintext
     }
 
     passwordValidator(plaintext: string) {
-        console.log(bcrypt.compareSync(plaintext, this.password))
         return bcrypt.compareSync(plaintext, this.password)
     }
 }
