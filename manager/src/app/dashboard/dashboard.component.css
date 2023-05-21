@@ -1,5 +1,8 @@
 .dashboard_container {
     margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
 }
 
 .header_divider {

@@ -1,41 +1,45 @@
+<div class="container">
+  <mat-toolbar>
+    <span>Maat Organizer</span>
+    <span class="example-spacer"></span>
+    <span *ngIf="!isLoggedIn">
+      No account?
+      <button
+        mat-raised-button color="success"
+        routerLink="register"
+        aria-label="Sign up">
+          Sign up
+      </button>&nbsp;
+    </span>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="/"><fa-icon [icon]="faLaptopCode"></fa-icon>&nbsp;Organizer</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0" *ngIf="!isLoggedIn">
-              <li class="nav-item"><a class="nav-link" routerLink="register">Sign Up</a></li>
-              <li class="nav-item"><a class="nav-link" routerLink="login">Login</a></li>
-              <!-- <li class="nav-item"><a class="nav-link" href="https://github.com/bramz"><fa-icon [icon]="faGithub"></fa-icon></a></li> -->
-            </ul>
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0" *ngIf="isLoggedIn">
-              <li class="nav-item">
-                <a class="nav-link"><fa-icon [icon]="faGear"></fa-icon></a>
-                <!-- <button class="nav-link" mat-button [matMenuTriggerFor]="settings"><fa-icon [icon]="faGear"></fa-icon></button>
-                <mat-menu class="nav-link" #settings="matMenu">
-                  <button mat-menu-item>Profile</button>
-                </mat-menu> -->
-              </li>
-              <li class="nav-item"><a class="nav-link" (click)="logout()">Logout</a></li>
-            </ul>
-            <!-- <mat-menu #appMenu="matMenu" *ngIf="isLoggedIn">
-              <ng-template matMenuContent let-name="name">
-                <button mat-menu-item>Settings</button>
-                <button mat-menu-item>Log off {{name}}</button>
-              </ng-template>
-            </mat-menu>
-            
-            <button mat-icon-button [matMenuTriggerFor]="appMenu" [matMenuTriggerData]="{name: 'Sally'}">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            
-
-            <button mat-icon-button [matMenuTriggerFor]="appMenu" [matMenuTriggerData]="{name: 'Bob'}">
-              <mat-icon>more_vert</mat-icon>
-            </button> -->
-        </div>
-    </div>
-  </nav>
-  <header></header>
+    <span *ngIf="isLoggedIn">
+      <button 
+        mat-icon-button class="example-icon favorite-icon"
+        [matMenuTriggerFor]="user"
+        aria-label="Settings Icon Button">
+          <mat-icon>settings</mat-icon>
+      </button>
+      <mat-menu #user="matMenu" class="user_menu">
+        <button 
+          mat-menu-item
+          aria-label="Settings">
+          Profile
+        </button>
+        <button 
+          mat-menu-item
+          aria-label="Settings">
+          Settings
+        </button>
+        <button 
+          mat-menu-item
+          (click)="logout()"
+          aria-label="Logout button">
+          Logout
+        </button>
+      </mat-menu>
+      Logged in as {{userEmail}}
+    </span>
+  </mat-toolbar>
+</div>
+<header></header>
 <router-outlet></router-outlet>

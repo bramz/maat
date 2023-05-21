@@ -15,9 +15,10 @@ export class AppComponent {
   faLaptopCode = faLaptopCode
   faGithub = faGithub
   faGear = faGear
+  isLoggedIn = false
   
   private roles: string[] = []
-  isLoggedIn = false
+
 
   constructor(
     private tokenStorageService: TStoreService,
@@ -26,14 +27,18 @@ export class AppComponent {
 
   logout(): void {
     this.tokenStorageService.signOut()
-    window.location.reload()
+    this.isLoggedIn = false
+    this.router.navigate(['/'])
   }
 
+  userEmail = ''
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorageService.getToken()
-    console.log(this.isLoggedIn)
     if (this.isLoggedIn) {
       const user = this.tokenStorageService.getUser()
+      this.userEmail = user.email.split('@')[0]
+    } else {
+      this.router.navigate(['/login'])
     }
     
   }

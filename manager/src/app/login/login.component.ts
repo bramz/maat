@@ -29,9 +29,11 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     
     if (this.tokenStorage.getToken()) {
-      console.log(this.tokenStorage)
       this.isLoggedIn = true
       this.roles = this.tokenStorage.getUser().roles
+      this.router.navigate(['/dashboard'])
+    } else {
+      this.router.navigate(['/login'])
     }
   }
 
@@ -44,7 +46,6 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = false
         this.isLoggedIn = true
         this.roles = this.tokenStorage.getUser().perms
-        console.log(this.roles)
         this.loadDashboard()
       },
       error: err => {
