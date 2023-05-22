@@ -19,6 +19,11 @@ create table if not exists data_user (
     email varchar(255) not null,
     password text not null,
     perms varchar(25) not null,
+    first_name varchar(50) not null,
+    middle_name varchar(50),
+    last_name varchar(50) not null,
+    address varchar(255),
+    phone int(11),
     primary key (uuid)
 );
 

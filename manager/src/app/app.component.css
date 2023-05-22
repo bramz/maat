@@ -1,4 +1,24 @@
 
+mat-toolbar {
+  background: #353935;
+  color: #EDEADE;
+}
+
+.mat-icon-button {
+  font-size: 38px;
+  padding: 0 !important;
+}
+
+.app_title {
+  font-family: 'Tangerine', serif;
+  font-size: 48px;
+}
+
+.title_text {
+  font-family: 'Tangerine', serif;
+  font-size: 38px;
+}
+
 .example-spacer {
   flex: 1 1 auto;
 }
@@ -16,7 +36,8 @@ margin-right: 8px;
 }
 .mat-button.mat-success:hover,
 .mat-stroked-button.mat-success:hover {
-background-color: #f0fff3;
+/* background-color: #f0fff3; */
+  background-color: #EDEADE;
 }
 
 .mat-raised-button.mat-success,
@@ -32,11 +53,21 @@ color:#155724;
 }
 
 ::ng-deep .user_menu {
-  background: whitesmoke;
+  background: #353935;
 }
 
-.mat-menu-item {
-  color: black;
-  font-weight: bold;
-  font-size: 16px;
+button.mat-menu-item {
+  font-family: 'Caveat', sans-serif;
+  font-size: 20px;
+  /* margin-right: 25px; */
 }
+
+button.mat-menu-item:active {
+  color: #EDEADE;
+}
+
+button.mat-menu-item:hover {
+  background-color: black;
+  color: green;
+}
+

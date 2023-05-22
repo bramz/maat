@@ -10,16 +10,20 @@ const API_URL = 'http://localhost:3001/';
 })
 export class UserService {
   constructor(private http: HttpClient) { }
+
+  getUserProfile(id: string): Observable<any> {
+    return this.http.get(API_URL + 'user/profile/' + id);
+  }
   
-  getPublicContent(): Observable<any> {
-    return this.http.get(API_URL + 'guest', { responseType: 'text' });
-  }
+  // getPublicContent(): Observable<any> {
+  //   return this.http.get(API_URL + 'guest', { responseType: 'text' });
+  // }
 
-  getUserBoard(): Observable<any> {
-    return this.http.get(API_URL + 'user', { responseType: 'text' });
-  }
+  // getUserBoard(): Observable<any> {
+  //   return this.http.get(API_URL + 'user', { responseType: 'text' });
+  // }
 
-  getAdminBoard(): Observable<any> {
-    return this.http.get(API_URL + 'admin', { responseType: 'text' });
-  }
+  // getAdminBoard(): Observable<any> {
+  //   return this.http.get(API_URL + 'admin', { responseType: 'text' });
+  // }
 }

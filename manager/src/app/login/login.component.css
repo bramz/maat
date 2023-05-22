@@ -2,11 +2,21 @@ mat-card {
   max-width: 400px;
   margin: 2em auto;
   text-align: center;
+  background: #353935;
 }
   
 mat-form-field {
   display: block;
-  font-size: 14px;
+  font-size: 16px;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: green !important;
+ }
+ 
+::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: green !important;
 }
 
 ::ng-deep .login_card {
@@ -19,6 +29,13 @@ mat-form-field {
   font-size: 16px;
 }
 
+::ng-deep .login_card.hover {
+  color: #155724;
+}
+
+::ng-deep .mat-card-content.hover {
+  color: #155724;
+}
 .example-spacer {
     flex: 1 1 auto;
 }

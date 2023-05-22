@@ -1,3 +1,4 @@
+
 .dashboard_container {
     margin-top: 10px;
     margin-left: auto;
@@ -5,20 +6,35 @@
     width: 80%;
 }
 
+h1 {
+    font-family: 'Caveat', sans-serif;
+    font-size: 40px;
+}
+
 .header_divider {
     border: 2px solid black;
 }
 
-.user_card {
-    margin-top: 10px;
-    border: 1px solid black;
+
+mat-menu {
+    background: #353935;
 }
 
-.user_card_header {
-    border-bottom: 1px solid black;
-    font-weight: bold;
+mat-menu-list {
+    color: #EDEADE;
 }
 
-.user_card_content {
-    margin-left: 10px;
+button.mat-button {
+    font-family: 'Caveat', sans-serif;
+    font-size: 20px;
+}
+
+button.mat-menu-item {
+    font-family: 'Caveat', sans-serif;
+    font-size: 20px;
+}
+
+button.mat-menu-item:hover {
+    background: black;
+    color: green;
 }

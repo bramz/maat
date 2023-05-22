@@ -1,43 +1,61 @@
 <div class="container">
   <mat-toolbar>
-    <span>Maat Organizer</span>
+    <span class="app_title">Maat Organizer</span>
     <span class="example-spacer"></span>
-    <span *ngIf="!isLoggedIn">
-      No account?
+    <span class="title_text" *ngIf="!isLoggedIn">
+      No Account?
       <button
         mat-raised-button color="success"
         routerLink="register"
         aria-label="Sign up">
           Sign up
       </button>&nbsp;
+      <button mat-raised-button color="success"
+        routerLink="login"
+        aria-label="Login">
+        Login
+      </button>
     </span>
 
     <span *ngIf="isLoggedIn">
       <button 
-        mat-icon-button class="example-icon favorite-icon"
+        mat-icon-button
         [matMenuTriggerFor]="user"
         aria-label="Settings Icon Button">
           <mat-icon>settings</mat-icon>
       </button>
       <mat-menu #user="matMenu" class="user_menu">
+        <button
+          mat-menu-item
+          aria-label="Dashboard"
+          routerLink="dashboard">
+          <mat-icon>home</mat-icon>Dashboard
+        </button>
         <button 
           mat-menu-item
-          aria-label="Settings">
-          Profile
+          aria-label="Settings"
+          routerLink="profile">
+          <mat-icon>account_circle</mat-icon>Profile
         </button>
         <button 
           mat-menu-item
           aria-label="Settings">
-          Settings
+          <mat-icon>settings</mat-icon>Settings
+        </button>
+        <button
+          mat-menu-item
+          routerLink=""
+          aria-label="Help">
+          <mat-icon>help</mat-icon>Help
         </button>
         <button 
           mat-menu-item
           (click)="logout()"
           aria-label="Logout button">
-          Logout
+          <mat-icon>cancel_presentation</mat-icon>Logout
         </button>
       </mat-menu>
-      Logged in as {{userEmail}}
+      <span class="title_text">Welcome {{email}}!</span>
     </span>
   </mat-toolbar>
 </div>

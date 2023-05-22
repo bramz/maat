@@ -9,14 +9,15 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
   isLoggedIn = false
-  roles = []
+  perms: any
 
   constructor(private tokenStorage: TStoreService, private router: Router) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true
-      this.roles = this.tokenStorage.getUser().roles
+      this.perms = this.tokenStorage.getUser().perms
+
       this.router.navigate(['/dashboard'])
     } else {
       this.router.navigate(['/login'])

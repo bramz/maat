@@ -1,0 +1,48 @@
+.profile_container {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.header_divider {
+    border: 2px solid black;
+}
+
+.mat-list {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: #353935;
+    border-radius: 10px !important;
+}
+
+.mat-list-item:hover {
+    background-color: black;
+    color: green;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.perms {
+    font-weight: bold;
+}
+
+/* ::ng-deep .user_menu {
+    background: #353935;
+  }
+  
+  button.mat-menu-item {
+    font-family: 'Caveat', sans-serif;
+    font-size: 20px;
+  }
+  
+  button.mat-menu-item:active {
+    color: #EDEADE;
+  }
+  
+  button.mat-menu-item:hover {
+    background-color: black;
+    color: green;
+  } */

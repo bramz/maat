@@ -1,1 +1,39 @@
-<p>register works!</p>
+<mat-card class="register_card" *ngIf="!isLoggedIn">
+    <mat-card-content>
+      <form name="form" (ngSubmit)="onSubmit()">
+        <h2>Create Account!</h2>
+
+        <mat-form-field>
+          <input matInput 
+                class="email_input" 
+                placeholder="Email" 
+                [(ngModel)]="form.email" 
+                name="email" 
+                required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput 
+                class="pass1_input" 
+                type="password" 
+                placeholder="Password" 
+                [(ngModel)]="form.password1" 
+                name="password" 
+                required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput 
+                class="pass2_input" 
+                type="password" 
+                placeholder="Confirm Password" 
+                [(ngModel)]="form.password2" 
+                name="password" 
+                required>
+          </mat-form-field>
+
+        <button mat-raised-button color="success" type="submit">Create</button>
+      </form>
+    </mat-card-content>
+</mat-card>
+<router-outlet></router-outlet>

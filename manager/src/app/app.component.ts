@@ -31,15 +31,17 @@ export class AppComponent {
     this.router.navigate(['/'])
   }
 
-  userEmail = ''
+  userEmail!: string
+  email!: string
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorageService.getToken()
     if (this.isLoggedIn) {
       const user = this.tokenStorageService.getUser()
       this.userEmail = user.email.split('@')[0]
+      this.email = this.userEmail.charAt(0).toUpperCase() + this.userEmail.slice(1)
+      this.roles = user.roles
     } else {
       this.router.navigate(['/login'])
     }
-    
   }
 }
