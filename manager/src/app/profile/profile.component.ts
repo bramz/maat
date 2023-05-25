@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TStoreService } from '../t-store.service';
 import { UserService } from '../user.service';
+import { FormGroup, FormControl } from '@angular/forms';
 
 
 @Component({
@@ -10,6 +11,21 @@ import { UserService } from '../user.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  step = 0;
+
+  setStep(index: number) {
+    this.step = index;
+  }
+
+  nextStep() {
+    this.step++;
+  }
+
+  prevStep() {
+    this.step--;
+  }
+
+  panelOpenState = false
   isLoggedIn = false
   roles = []
 
@@ -20,6 +36,13 @@ export class ProfileComponent implements OnInit {
   address?: string
   phone?: string
   perms!: string
+
+  form = new FormGroup({
+    firstName: new FormControl(),
+    lastName: new FormControl(),
+    address: new FormControl(),
+    phone: new FormControl(),
+  })
 
   constructor(
     private tokenStorage: TStoreService,
@@ -42,6 +65,9 @@ export class ProfileComponent implements OnInit {
           this.address = data.address
           this.phone = data.phone 
           this.perms = data.perms
+          
+
+
         }, error: (err) => {
           console.log(err)
         }

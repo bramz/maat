@@ -5,7 +5,7 @@
     <!-- need to customize the menus and dropdowns specific to users -->
     <button mat-button [matMenuTriggerFor]="organizer">Organizer</button>
     <mat-menu #organizer="matMenu" yPosition="below">
-        <button mat-menu-item>Calendar</button>
+        <button mat-menu-item routerLink="calendar">Calendar</button>
         <button mat-menu-item>Journal</button>
         <button mat-menu-item>Finance</button>
         <button mat-menu-item>Gallery</button>

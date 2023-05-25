@@ -1,4 +1,6 @@
-<div class="container">
+<div class="container" [class.mat-elevation-z2]="!isActive" [class.mat-elevation-z8]="isActive">
+
+
   <mat-toolbar>
     <span class="app_title">Maat Organizer</span>
     <span class="example-spacer"></span>
@@ -33,15 +35,15 @@
         </button>
         <button 
           mat-menu-item
-          aria-label="Settings"
+          aria-label="Profile"
           routerLink="profile">
           <mat-icon>account_circle</mat-icon>Profile
         </button>
-        <button 
+        <!-- <button 
           mat-menu-item
           aria-label="Settings">
           <mat-icon>settings</mat-icon>Settings
-        </button>
+        </button> -->
         <button
           mat-menu-item
           routerLink=""

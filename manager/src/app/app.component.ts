@@ -16,6 +16,7 @@ export class AppComponent {
   faGithub = faGithub
   faGear = faGear
   isLoggedIn = false
+  isActive = false
   
   private roles: string[] = []
 

@@ -2,6 +2,7 @@
 mat-toolbar {
   background: #353935;
   color: #EDEADE;
+  padding-bottom: 14px black;
 }
 
 .mat-icon-button {

@@ -9,6 +9,16 @@
     border: 2px solid black;
 }
 
+h1 {
+  font-family: 'Caveat', sans-serif;
+  font-size: 40px;
+}
+
+h2 {
+  font-family: 'Caveat', sans-serif;
+  font-size: 36px;
+}
+
 .mat-list {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -29,20 +39,85 @@
     font-weight: bold;
 }
 
-/* ::ng-deep .user_menu {
-    background: #353935;
-  }
-  
-  button.mat-menu-item {
-    font-family: 'Caveat', sans-serif;
-    font-size: 20px;
-  }
-  
-  button.mat-menu-item:active {
-    color: #EDEADE;
-  }
-  
-  button.mat-menu-item:hover {
-    background-color: black;
-    color: green;
-  } */
+/* new accordian styling */
+.mat-icon {
+  margin-left: 10px;
+}
+
+.mat-form-field {
+  margin-right: 15px;
+}
+
+mat-form-field {
+  /* display: block; */
+  font-size: 15px;
+}
+
+.mat-card-sm-image {
+  margin-right: 20px;
+}
+
+mat-card {
+  margin-top: 25px;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: green !important;
+ }
+ 
+::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: green !important;
+}
+
+::ng-deep .mat-card-content.hover {
+  color: #155724;
+}
+
+/* .example-spacer {
+    flex: 1 1 auto;
+} */
+
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}
+
+/* button styling */
+
+.mat-button.mat-success,
+.mat-stroked-button.mat-success {
+  color: #155724;
+}
+.mat-button.mat-success:hover,
+.mat-stroked-button.mat-success:hover {
+/* background-color: #f0fff3; */
+  background-color: #EDEADE;
+}
+
+.mat-raised-button.mat-success,
+.mat-flat-button.mat-success,
+.mat-fab.mat-success,
+.mat-mini-fab.mat-success {
+color: #f0fff3;
+background-color: #155724;
+}
+
+.mat-icon-button.mat-success {
+color:#155724;
+}
+
+.success {
+  color: #f0fff3;
+  background-color: #155724;
+}
+
+.mat-button {
+  color: #f0fff3;
+  /* background-color: #155724; */
+}
+
+.avatar_img {
+  margin-right: 25px;
+}
+
