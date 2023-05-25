@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TStoreService } from '../t-store.service';
 import { UserService } from '../user.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl } from '@angular/forms';
 
 
 @Component({
@@ -37,11 +37,11 @@ export class ProfileComponent implements OnInit {
   phone?: string
   perms!: string
 
-  form = new FormGroup({
-    firstName: new FormControl(),
-    lastName: new FormControl(),
-    address: new FormControl(),
-    phone: new FormControl(),
+  form = new UntypedFormGroup({
+    firstName: new UntypedFormControl(),
+    lastName: new UntypedFormControl(),
+    address: new UntypedFormControl(),
+    phone: new UntypedFormControl(),
   })
 
   constructor(
