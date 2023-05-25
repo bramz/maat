@@ -2031,7 +2031,7 @@ ajv@^6.12.5:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-angular-calendar@0.31.0:
+angular-calendar@^0.31.0:
   version "0.31.0"
   resolved "https://registry.yarnpkg.com/angular-calendar/-/angular-calendar-0.31.0.tgz#adf71a2078021b1893d14a87a4e0efda67a1312a"
   integrity sha512-QGPObUmOYLr4IeSaj1pzZjcycN6otYx+SbeezJuujstXR9f2wo4CtMlBQ+SU+ZF5VFfrdYge8qkxMGCLBLBRrw==

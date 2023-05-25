@@ -7,7 +7,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './register/register.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
+// import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { AngularMaterialModule } from './angular-material.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -31,7 +31,7 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    FlexLayoutModule,
+    // FlexLayoutModule,
     FormsModule,
     AngularMaterialModule,
     HttpClientModule,
