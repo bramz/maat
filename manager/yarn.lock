@@ -249,13 +249,6 @@
   dependencies:
     tslib "^2.3.0"
 
-"@angular/upgrade@^16.0.3":
-  version "16.0.3"
-  resolved "https://registry.yarnpkg.com/@angular/upgrade/-/upgrade-16.0.3.tgz#d21fd9414060303963f00f9a2fb8ab0ae0d67190"
-  integrity sha512-BwIN+Te1rLrHFjeBwssmNYZtRQrP3sC53AZczmfo9T2EJVZmq7eWzrY3A/xAQ6AUK4mn5UmFGOif8VBjg2J9wQ==
-  dependencies:
-    tslib "^2.3.0"
-
 "@assemblyscript/loader@^0.10.1":
   version "0.10.1"
   resolved "https://registry.yarnpkg.com/@assemblyscript/loader/-/loader-0.10.1.tgz#70e45678f06c72fa2e350e8553ec4a4d72b92e06"
