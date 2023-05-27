@@ -1,15 +1,16 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { CalendarEvent, CalendarView } from 'angular-calendar';
+import { Component } from '@angular/core';
+import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 
 @Component({
-  selector: 'mwl-calendar',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: 'calendar.component.html',
+  selector: 'app-calendar',
+  templateUrl: './calendar.component.html',
+  styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent {
-  view: CalendarView = CalendarView.Month;
+  selectedDate: Date | undefined;
 
-  viewDate: Date = new Date();
-
-  events: CalendarEvent[] = [];
+  addEvent(type: string, event: MatDatepickerInputEvent<Date>): void {
+    this.selectedDate = event.value;
+    console.log('Selected date:', this.selectedDate);
+  }
 }
