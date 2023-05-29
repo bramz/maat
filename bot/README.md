@@ -1,2 +1,0 @@
-# heka
-Typescript discord bot
